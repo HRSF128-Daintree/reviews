@@ -7,4 +7,4 @@ ReactDom.render(
   document.getElementById('reviews-root'),
 );
 
-// watsona
+// watson
