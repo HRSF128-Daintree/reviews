@@ -1,0 +1,7 @@
+.eslint*
+**/node_modules
+**/client
+webpack.config.js
+**/database
+**/public
+jest.config.js
