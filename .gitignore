@@ -1,0 +1,5 @@
+node_modules/
+mySQL.creds.js
+coverage/
+package-lock.json
+public/bundle.js
