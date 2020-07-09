@@ -1,31 +1,33 @@
 const models = require('../models/reviews.js');
 
 module.exports = {
-  get(req, res) {
-    models.getReviews().then((allReviews) => {
-      // console.log('all messages from get are', allMessages);
+  getH(req, res) {
+    models.getReviews(req.params.hotelId).then((allReviews) => {
       res.status(200);
       res.send(allReviews);
     });
   },
+  getR(req, res) {
+    models.getOneReview(req.params.reviewId).then((review) => {
+      res.status(200);
+      res.send(review);
+    });
+  },
   post(req, res) {
-    // console.log('post req',req.body)
+    console.log('in post and body is ', req.body);
     models.createReview(req.body).then(() => {
       res.sendStatus(201);
-      // res.send('message posted');
     });
   },
   delete(req, res) {
-    // console.log('post req',req.body)
-    models.deleteReview(req.body).then(() => {
-      res.status(201);
+    models.deleteReview(req.params.reviewId).then(() => {
+      res.status(204);
       res.send('review deleted');
     });
   },
   patch(req, res) {
-    // console.log('post req',req.body)
-    models.updateReview(req.body).then(() => {
-      res.status(201);
+    models.updateReview(req.body, req.params.reviewId).then(() => {
+      res.status(204);
       res.send('review updated');
     });
   },
