@@ -86,14 +86,14 @@
 
 ```json
     {
-      "user_id": "Number",
-      "hotel_id": "Number",
-      "review_date": "Timestamp",
-      "review_body": "String",
-      "date_of_stay": "Timestamp",
+      "user_id": "Number", -REQUIRED
+      "hotel_id": "Number", -REQUIRED
+      "review_date": "Timestamp", -REQUIRED
+      "review_body": "String", -REQUIRED
+      "date_of_stay": "Timestamp", -REQUIRED
       "room_tip": "String",
       "trip_type": "String",
-      "overall_rating": "Number",
+      "overall_rating": "Number", -REQUIRED
       "value_rating": "Number",
       "location_rating": "Number",
       "service_rating": "Number",
@@ -118,18 +118,18 @@
 
 ```json
     {
-      "review_body": "String",
-      "room_tip": "String",
-      "trip_type": "String",
-      "overall_rating": "Number",
-      "value_rating": "Number",
-      "location_rating": "Number",
-      "service_rating": "Number",
-      "rooms_rating": "Number",
-      "cleanliness_rating": "Number",
-      "sleep_quality_rating": "Number",
-      "collected_in_part_hotel": "Number",
-      "review_helpful_votes": "Number"
+      "review_body": "String", *OPTIONAL*
+      "room_tip": "String", *OPTIONAL*
+      "trip_type": "String", *OPTIONAL*
+      "overall_rating": "Number", *OPTIONAL*
+      "value_rating": "Number", *OPTIONAL*
+      "location_rating": "Number", *OPTIONAL*
+      "service_rating": "Number", *OPTIONAL*
+      "rooms_rating": "Number", *OPTIONAL*
+      "cleanliness_rating": "Number", *OPTIONAL*
+      "sleep_quality_rating": "Number", *OPTIONAL*
+      "collected_in_part_hotel": "Number", *OPTIONAL*
+      "review_helpful_votes": "Number" *OPTIONAL*
     }
 ```
 
