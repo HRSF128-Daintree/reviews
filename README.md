@@ -1,12 +1,12 @@
 # Project Name
 
-> Reviews component of Hotellooo
+> Reviews component of Daintree
 
 ## Related Projects
-
-  - https://github.com/Hotellooo/calendar
-  - https://github.com/teamName/about
-  - https://github.com/teamName/photos-carousel
+  - original repo: https://github.com/Hotellooo/reviews
+  - https://github.com/HRSF128-Daintree/erik-calendar
+  - https://github.com/HRSF128-Daintree/jin-carousel
+  - https://github.com/HRSF128-Daintree/about
 
 ## Table of Contents
 
