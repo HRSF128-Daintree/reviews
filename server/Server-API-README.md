@@ -11,8 +11,10 @@
 **Returns:** JSON
 
 ```json
-{
-    {
+
+
+[
+ {
       "id": "Number",
       "user_id": "Number",
       "hotel_id": "Number",
@@ -38,11 +40,36 @@
       "user_city": "String",
       "user_contributions": "Number",
       "user_helpful_votes": "Number"
-    },
-    { ... },
-    { ... },
-    ...
-}
+ },
+ {
+      "id": "Number",
+      "user_id": "Number",
+      "hotel_id": "Number",
+      "review_date": "Timestamp",
+      "review_body": "String",
+      "date_of_stay": "Timestamp",
+      "room_tip": "String",
+      "trip_type": "String",
+      "overall_rating": "Number",
+      "value_rating": "Number",
+      "location_rating": "Number",
+      "service_rating": "Number",
+      "rooms_rating": "Number",
+      "cleanliness_rating": "Number",
+      "sleep_quality_rating": "Number",
+      "collected_in_part_hotel": "Number",
+      "review_helpful_votes": "Number",
+      "month_of_stay": "Number",
+      "hotel_name": "String",
+      "hotel_city": "String",
+      "username": "String",
+      "user_avatar": "String",
+      "user_city": "String",
+      "user_contributions": "Number",
+      "user_helpful_votes": "Number"
+ },
+ ...
+]
 ```
 
 ### Get one review info
