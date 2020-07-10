@@ -23,6 +23,7 @@ CREATE TABLE reviews (
 );
 
 /* maybe add constraints for all? */
+/* inheritance could be a possiblity */
 
 CREATE TABLE hotels (
   hotel_id SERIAL PRIMARY KEY,
