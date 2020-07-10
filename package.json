@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build-db": "mysql -u root < ./database/schema.sql",
-    "seed-db": "node ./database/seedHelpers.js",
+    "seed": "node ./database//csvseed/hotels.js",
     "nodemon": "nodemon ./server/index.js",
     "react-dev": "NODE_ENV=production BABEL_ENV=production webpack -d --watch",
     "build": "NODE_ENV=production BABEL_ENV=production webpack --mode production",

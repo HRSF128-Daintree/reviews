@@ -3,7 +3,7 @@ CREATE KEYSPACE reviewServer WITH replication = {'class': 'SimpleStrategy', 'rep
 USE reviewServer;
 
 CREATE TABLE hotelReviews (
-  review_id counter,
+  review_id uuid,
   hotel_name text NOT NULL,
   username text NOT NULL,
   user_avatar text,
@@ -22,12 +22,11 @@ CREATE TABLE hotelReviews (
   rooms_rating tinyint,
   cleanliness_rating tinyint,
   sleep_quality_rating tinyint,
-  PRIMARY KEY (hotel_name, review_id)
+  PRIMARY KEY (hotel_name, review_date)
 );
 
-
 CREATE TABLE userReviews (
-  review_id counter,
+  review_id uuid,
   username text NOT NULL,
   hotel_name text NOT NULL,
   user_avatar text,
@@ -46,6 +45,6 @@ CREATE TABLE userReviews (
   rooms_rating tinyint,
   cleanliness_rating tinyint,
   sleep_quality_rating tinyint,
-  PRIMARY KEY (username, review_id)
+  PRIMARY KEY (username, review_date)
 );
 
