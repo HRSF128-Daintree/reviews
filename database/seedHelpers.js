@@ -1,6 +1,5 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable max-len */
-const db = require('./index.js');
 
 // REVIEWS
 
@@ -13,11 +12,9 @@ const generateReviewBody = () => {
   const randomNoun = nouns[getRandomIndex(nouns.length)];
   const areas = ['workout room', 'lobby', 'outdoor area', 'room', 'bathroom', 'garage'];
   const randomArea = areas[getRandomIndex(areas.length)];
-  const locationAdjectives = ['horrible', 'noisy', 'okay', 'nothing special', 'relaxing', 'vibrant', 'pleasant', 'fun', 'perfect'];
-  const randomAdj = locationAdjectives[getRandomIndex(locationAdjectives.length)];
   const stayAgainLikelihood = ['not', 'probably not', 'potentially', 'likely', 'very likely', 'definitely', 'certainly'];
   const randomLikelihood = stayAgainLikelihood[getRandomIndex(stayAgainLikelihood.length)];
-  return `I ${randomMood} the ${randomNoun} in the ${randomArea}. The location was ${randomAdj}. I would ${randomLikelihood} stay here again.`;
+  return `I ${randomMood} the ${randomNoun} in the ${randomArea}. I would ${randomLikelihood} stay here again.`;
 };
 
 const generateRoomTip = () => {
@@ -202,8 +199,10 @@ const seedAnswers = (numberQuestionIds, callback) => {
   });
 };
 
-seedHotels(() => console.log('Seeded hotels'));
-seedUsers(() => console.log('Seeded users'));
-seedReviews(() => console.log('Seeded reviews'));
-seedQuestions(() => console.log('Seeded questions'));
-seedAnswers(50, () => console.log('Seeded answers'));
+module.exports = {
+  hotelname: generateHotelName,
+  city: generateCity,
+  reviewBody: generateReviewBody,
+  tripType: generateTripType,
+  date: generateDate,
+}
