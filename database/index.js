@@ -5,9 +5,9 @@ const cassandra = require('cassandra-driver');
 const creds = require('../cassandra.creds.js');
 
 const client = new cassandra.Client({
-  contactPoints: ['127.0.0.1'],
-  localDataCenter: 'datacenter1',
-  keyspace: 'reviewserver'
+  contactPoints: creds.contactPoints,
+  localDataCenter: creds.localDataCenter,
+  keyspace: creds.keyspace
 });
 
 client.connect()
