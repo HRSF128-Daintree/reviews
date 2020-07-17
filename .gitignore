@@ -3,3 +3,4 @@ mySQL.creds.js
 coverage/
 package-lock.json
 public/bundle.js
+cassandra.creds.js

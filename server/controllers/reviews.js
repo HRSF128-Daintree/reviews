@@ -2,33 +2,36 @@ const models = require('../models/reviews.js');
 
 module.exports = {
   getH(req, res) {
-    models.getReviews(req.params.hotelId).then((allReviews) => {
+    const hname = req.params.hotelName.replace(/_/g, ' ');
+    console.log(hname);
+    models.getHotelReviews(hname).then((hotelReviews) => {
       res.status(200);
-      res.send(allReviews);
+      res.send(hotelReviews.rows);
     });
   },
-  getR(req, res) {
-    models.getOneReview(req.params.reviewId).then((review) => {
+  getU(req, res) {
+    const username = req.params.username.replace(/_/g, ' ');
+    models.getUserReviews(username).then((UserReviews) => {
       res.status(200);
-      res.send(review);
+      res.send(UserReviews.rows);
     });
   },
-  post(req, res) {
-    console.log('in post and body is ', req.body);
-    models.createReview(req.body).then(() => {
-      res.sendStatus(201);
-    });
-  },
-  delete(req, res) {
-    models.deleteReview(req.params.reviewId).then(() => {
-      res.status(204);
-      res.send('review deleted');
-    });
-  },
-  patch(req, res) {
-    models.updateReview(req.body, req.params.reviewId).then(() => {
-      res.status(204);
-      res.send('review updated');
-    });
-  },
+  // post(req, res) {
+  //   console.log('in post and body is ', req.body);
+  //   models.createReview(req.body).then(() => {
+  //     res.sendStatus(201);
+  //   });
+  // },
+  // delete(req, res) {
+  //   models.deleteReview(req.params.reviewId).then(() => {
+  //     res.status(204);
+  //     res.send('review deleted');
+  //   });
+  // },
+  // patch(req, res) {
+  //   models.updateReview(req.body, req.params.reviewId).then(() => {
+  //     res.status(204);
+  //     res.send('review updated');
+  //   });
+  // },
 };
