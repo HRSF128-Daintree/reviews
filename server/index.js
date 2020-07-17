@@ -4,8 +4,7 @@ const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
 
 if (cluster.isMaster) {
-  for (var i = 0; i < numCPUs; i++) {
-    // Create a worker
+  for (let i = 0; i < numCPUs; i++) {
     cluster.fork();
   }
 } else {
