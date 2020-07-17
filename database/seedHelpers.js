@@ -89,7 +89,8 @@ const generateHotelName = () => {
   const randomMiddle = middle[getRandomIndex(middle.length)];
   const last = ['Resort', 'Suites', 'Hotel', 'Lodges', 'Club', 'Inn', 'Oriental', 'Lodge', 'Moon', 'Horizons', 'Quarters'];
   const randomLast = last[getRandomIndex(last.length)];
-  return `${randomFirst} ${randomMiddle} ${randomLast}`;
+  const hotel_number = generateNumber(6000);
+  return `${randomFirst} ${randomMiddle} ${randomLast} ${hotel_number}`;
 };
 
 const numberOfHotels = 100;

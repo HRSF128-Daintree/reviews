@@ -1,17 +1,18 @@
-const mysql = require('mysql');
-const creds = require('../mySQL.creds.js');
+// const mysql = require('mysql');
+// const creds = require('../mySQL.creds.js');
 
-const connection = mysql.createConnection({
-  host: creds.dbHost,
-  port: creds.dbPort,
-  user: creds.dbUser,
-  password: creds.dbPassword,
-  database: creds.dbDatabase,
+const cassandra = require('cassandra-driver');
+const creds = require('../cassandra.creds.js');
+
+const client = new cassandra.Client({
+  contactPoints: ['h1', 'h2'],
+  localDataCenter: 'datacenter1',
+  keyspace: 'ks1'
 });
 
-connection.connect((err) => {
-  if (err) { console.error(`error: ${err.message}`); }
-  console.log('Connected to the MySQL server.');
-});
+// connection.connect((err) => {
+//   if (err) { console.error(`error: ${err.message}`); }
+//   console.log('Connected to the MySQL server.');
+// });
 
-module.exports = connection;
+module.exports = client;

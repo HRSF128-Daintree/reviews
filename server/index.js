@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/reviews', express.static('public'));
 
-app.get('/hotels/:hotelId', controller.getH);
-app.get('/reviews/:reviewId', controller.getR);
-app.post('/reviews', controller.post);
-app.delete('/reviews/:reviewId', controller.delete);
-app.patch('/reviews/:reviewId', controller.patch);
+app.get('/hotels/:hotelName', controller.getH);
+// app.get('/users/:userId', controller.getU);
+// app.post('/reviews', controller.post);
+// app.delete('/reviews/:reviewId', controller.delete);
+// app.patch('/reviews/:reviewId', controller.patch);
 
 app.listen(port, () => console.log(`Reviews app listening at ${port}`));
