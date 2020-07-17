@@ -2,15 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
+const controller = require('./controllers/reviews.js');
 
 if (cluster.isMaster) {
-  for (let i = 0; i < numCPUs; i++) {
+  for (let i = 0; i < numCPUs; i += 1) {
     cluster.fork();
   }
 } else {
   const app = express();
   const port = 3004;
-  const controller = require('./controllers/reviews.js');
 
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
