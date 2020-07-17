@@ -6,15 +6,16 @@ module.exports = {
     console.log(hname);
     models.getHotelReviews(hname).then((hotelReviews) => {
       res.status(200);
-      res.send(hotelReviews);
+      res.send(hotelReviews.rows);
     });
   },
-  // getU(req, res) {
-  //   models.getUserReview(req.params.reviewId).then((review) => {
-  //     res.status(200);
-  //     res.send(review);
-  //   });
-  // },
+  getU(req, res) {
+    const username = req.params.username.replace(/_/g, ' ');
+    models.getUserReviews(username).then((UserReviews) => {
+      res.status(200);
+      res.send(UserReviews.rows);
+    });
+  },
   // post(req, res) {
   //   console.log('in post and body is ', req.body);
   //   models.createReview(req.body).then(() => {
