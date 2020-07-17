@@ -15,7 +15,8 @@
     "build": "NODE_ENV=production BABEL_ENV=production webpack --mode production",
     "test": "jest --coverage --verbose",
     "pretest": "eslint server/",
-    "start": "node ./server/index.js"
+    "start": "node ./server/index.js",
+    "server-test": "k6 run ./tests/serverTest.js"
   },
   "dependencies": {
     "babel-preset-react-app": "^9.1.2",
