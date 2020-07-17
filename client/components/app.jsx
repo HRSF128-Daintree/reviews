@@ -54,9 +54,14 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: `/reviews/${this.props.hotelId}`,
+      url: `/hotels/The_Nomad_Quarters_10`,
       method: "GET",
-      success: (data) => { this.setState({ reviews: JSON.parse(data) }); },
+      success: (data) => {
+        let preData = data;
+        // for (let i = 0; i < preData.length; i += 1) {
+
+        // }
+        this.setState({ reviews: preData }); },
       error: () => console.log('Error retrieving data from server'),
     });
   }
