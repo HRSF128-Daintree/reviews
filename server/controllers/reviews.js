@@ -2,7 +2,9 @@ const models = require('../models/reviews.js');
 
 module.exports = {
   getH(req, res) {
-    models.getHotelReviews(req.params.hotelName).then((hotelReviews) => {
+    const hname = req.params.hotelName.replace(/_/g, ' ');
+    console.log(hname);
+    models.getHotelReviews(hname).then((hotelReviews) => {
       res.status(200);
       res.send(hotelReviews);
     });
